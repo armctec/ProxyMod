@@ -1,0 +1,11 @@
+# Keys
+keys.proxymod.category=ProxyMod for CC e MFR
+
+# Creative Tabs
+itemGroup.proxymod=ProxyMod for CC e MFR
+
+# Items
+# item.proxymod:mapleLeaf.name=Maple Leaf of Awesomeness
+
+#Blocks
+tile.proxymod:rednetproxy.name=Proxy for CC e MFR

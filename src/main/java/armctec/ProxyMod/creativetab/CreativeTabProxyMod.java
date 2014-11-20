@@ -12,7 +12,7 @@ public class CreativeTabProxyMod
         @Override
         public Item getTabIconItem()
         {
-            return null;//ModItems.mapleLeaf;
+            return Item.saddle;
         }
     };
 }

@@ -38,7 +38,7 @@ public class BlockBasic extends Block
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IconRegister iconRegister)
+    public void registerIcons(IconRegister iconRegister)
     {
         blockIcon = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
     }

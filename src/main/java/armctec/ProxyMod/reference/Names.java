@@ -15,7 +15,5 @@ public final class Names
     public static final class Keys
     {
         public static final String CATEGORY = "keys.proxymod.category";
-        public static final String CHARGE = "keys.proxymod.charge";
-        public static final String RELEASE = "keys.proxymod.release";
     }
 }
