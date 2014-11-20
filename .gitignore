@@ -1,0 +1,10 @@
+# pastas
+/eclipse
+/.gradle
+/out
+/build
+
+#arquivos
+*.iml
+*.ipr
+*.iws

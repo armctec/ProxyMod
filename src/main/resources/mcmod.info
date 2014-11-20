@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ProxyMod",
+  "name": "Proxy Mod for ComputerCraft e MineFactory Reloaded",
+  "description": "Block for bundledcable",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["armctec"],
+  "credits": "The Forge and FML guys",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
