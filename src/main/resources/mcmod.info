@@ -3,13 +3,13 @@
   "modid": "ProxyMod",
   "name": "Proxy Mod for ComputerCraft e MineFactory Reloaded",
   "description": "Block for bundledcable",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "version": "1.0 alpha",
+  "mcversion": "1.6.4",
   "url": "",
   "updateUrl": "",
   "authors": ["armctec"],
-  "credits": "The Forge and FML guys",
-  "logoFile": "",
+  "credits": "The Forge and FML guys, Pahimar",
+  "logoFile" : "pack.png",
   "screenshots": [],
   "dependencies": []
 }

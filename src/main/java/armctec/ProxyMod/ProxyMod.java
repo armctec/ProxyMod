@@ -1,5 +1,6 @@
 package armctec.ProxyMod;
 
+import armctec.ProxyMod.compat.ComputerCraftLoad;
 import armctec.ProxyMod.handler.ConfigurationHandler;
 import armctec.ProxyMod.init.ModBlocks;
 import armctec.ProxyMod.init.ModItems;
@@ -14,7 +15,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, dependencies = Reference.DEPENDENCIES)
 public class ProxyMod
 {
     @Mod.Instance(Reference.MOD_ID)
@@ -39,6 +40,7 @@ public class ProxyMod
     public void init(FMLInitializationEvent event)
     {
         Recipes.init();
+        ComputerCraftLoad.init();
         LogHelper.info("Initialization Complete!");
     }
 
