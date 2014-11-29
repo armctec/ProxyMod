@@ -1,10 +1,10 @@
 package armctec.ProxyMod;
 
-import armctec.ProxyMod.compat.ComputerCraftLoad;
 import armctec.ProxyMod.handler.ConfigurationHandler;
 import armctec.ProxyMod.init.ModBlocks;
 import armctec.ProxyMod.init.ModItems;
 import armctec.ProxyMod.init.Recipes;
+import armctec.ProxyMod.integration.BlockProxyCCMFR;
 import armctec.ProxyMod.proxy.ClientProxy;
 import armctec.ProxyMod.proxy.CommonProxy;
 import armctec.ProxyMod.proxy.IProxy;
@@ -45,7 +45,7 @@ public class ProxyMod
 
         Recipes.init();
         proxy.registerTileEntities();
-        ComputerCraftLoad.init();
+        BlockProxyCCMFR.init();
         LogHelper.info("Initialization Complete!");
     }
 

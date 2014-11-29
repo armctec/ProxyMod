@@ -1,7 +1,6 @@
 package armctec.ProxyMod.proxy;
 
-import armctec.ProxyMod.compat.MFRProvider;
-import armctec.ProxyMod.integration.CCProvider;
+import armctec.ProxyMod.integration.TileProviderCC;
 import armctec.ProxyMod.reference.Names;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -11,6 +10,6 @@ public abstract class CommonProxy implements IProxy
     {
         //GameRegistry.registerTileEntity(CCProvider.class, Names.Blocks.BUNDLEDCC);
         //GameRegistry.registerTileEntity(MFRProvider.class, Names.Blocks.REDNETPROXY);
-        GameRegistry.registerTileEntity(CCProvider.class, Names.Blocks.PROXYCCMFR);
+        GameRegistry.registerTileEntity(TileProviderCC.class, Names.Blocks.PROXYCCMFR);
     }
 }

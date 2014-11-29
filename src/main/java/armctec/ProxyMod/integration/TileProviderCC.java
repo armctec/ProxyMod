@@ -5,7 +5,7 @@ import armctec.ProxyMod.utility.LogHelper;
 import dan200.computercraft.api.redstone.IBundledRedstoneProvider;
 import net.minecraft.world.World;
 
-public class CCProvider extends BasicTileEntity implements IBundledRedstoneProvider
+public class TileProviderCC extends BasicTileEntity implements IBundledRedstoneProvider
 {
     static int redstonepower[]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
