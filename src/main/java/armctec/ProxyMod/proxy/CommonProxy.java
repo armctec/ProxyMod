@@ -10,5 +10,6 @@ public abstract class CommonProxy implements IProxy
     public void registerTileEntities()
     {
         GameRegistry.registerTileEntity(CCProvider.class, Names.Blocks.BUNDLEDCC);
+        GameRegistry.registerTileEntity(MFRProvider.class, Names.Blocks.REDNETPROXY);
     }
 }
