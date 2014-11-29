@@ -82,7 +82,7 @@ public class BlockMFRProvider extends BlockTileBasic implements IConnectableRedN
 
             redstone_power[lado] = world.getIndirectPowerLevelTo(xa, ya, za, lado);
         }
-        
+
         world.scheduleBlockUpdate(x,y,z,this.blockID,this.tickRate(world));
     }
 
