@@ -10,6 +10,7 @@ public final class Names
     public static final class Blocks
     {
         public static final String REDNETPROXY = "rednetproxy";
+        public static final String BUNDLEDCC = "bundledcc";
     }
 
     public static final class Keys

@@ -9,6 +9,6 @@ public class Recipes
 {
     public static void init()
     {
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.rednetproxy), " s ", "sss", " s ", 's', "stickWood"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.BundledCC), " s ", "sss", " s ", 's', "stickWood"));
     }
 }

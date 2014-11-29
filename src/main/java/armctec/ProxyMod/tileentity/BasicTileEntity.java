@@ -1,5 +1,6 @@
 package armctec.ProxyMod.tileentity;
 
+import dan200.computercraft.api.ComputerCraftAPI;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet;
@@ -31,5 +32,10 @@ public class BasicTileEntity extends TileEntity
     public void onDataPacket(INetworkManager net, Packet132TileEntityData pkt)
     {
         this.readFromNBT(pkt.data);
+    }
+
+    @Override
+    public void updateEntity()
+    {
     }
 }

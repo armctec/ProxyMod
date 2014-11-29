@@ -5,6 +5,8 @@ import armctec.ProxyMod.handler.ConfigurationHandler;
 import armctec.ProxyMod.init.ModBlocks;
 import armctec.ProxyMod.init.ModItems;
 import armctec.ProxyMod.init.Recipes;
+import armctec.ProxyMod.proxy.ClientProxy;
+import armctec.ProxyMod.proxy.CommonProxy;
 import armctec.ProxyMod.proxy.IProxy;
 import armctec.ProxyMod.reference.Reference;
 import armctec.ProxyMod.utility.LogHelper;
@@ -39,7 +41,10 @@ public class ProxyMod
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
+        ClientProxy proxy = new ClientProxy();
+
         Recipes.init();
+        proxy.registerTileEntities();
         ComputerCraftLoad.init();
         LogHelper.info("Initialization Complete!");
     }

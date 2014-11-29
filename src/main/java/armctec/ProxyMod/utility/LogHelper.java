@@ -18,7 +18,7 @@ public class LogHelper
 
     public static void debug(Object object)
     {
-        log(Level.FINEST, object);
+        log(Level.WARNING, object);
     }
 
     public static void error(Object object)
