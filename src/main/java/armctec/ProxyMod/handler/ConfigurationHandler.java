@@ -14,7 +14,7 @@ import java.io.File;
 public class ConfigurationHandler
 {
     public static Configuration configuration;
-    public static boolean testValue = false;
+    public static int proxyccmfr_id  = 1500;
 
     public static void init(File configFile)
     {
@@ -28,8 +28,8 @@ public class ConfigurationHandler
     private static void loadConfiguration()
     {
         Property lido;
-        lido = configuration.get("configValue", Configuration.CATEGORY_GENERAL, false, "This is an example configuration value");
-        testValue = lido.getBoolean(false);
+        lido = configuration.get("proxyccmfr_id", Configuration.CATEGORY_GENERAL, 1501, "ID para o bloco proxyccmfr");
+        proxyccmfr_id = lido.getInt(1500);
 
         if (configuration.hasChanged())
         {

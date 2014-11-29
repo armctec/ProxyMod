@@ -19,6 +19,7 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
     static int redstone_cc[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     static int redstone_mfr[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     static int redstone_bits[] = {1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768};
+
     /* Registra classe para computer craft */
     public static void init()
     {

@@ -9,13 +9,11 @@ public final class Names
 
     public static final class Blocks
     {
-        public static final String REDNETPROXY = "rednetproxy";
-        public static final String BUNDLEDCC = "bundledcc";
         public static final String PROXYCCMFR = "proxyccmfr";
     }
 
     public static final class Keys
     {
-        public static final String CATEGORY = "keys.proxymod.category";
+        //public static final String CATEGORY = "keys.proxymod.category";
     }
 }

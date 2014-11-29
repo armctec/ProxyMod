@@ -8,5 +8,4 @@ itemGroup.proxymod=ProxyMod for CC e MFR
 # item.proxymod:mapleLeaf.name=Maple Leaf of Awesomeness
 
 #Blocks
-tile.proxymod:rednetproxy.name=Proxy for MFR
-tile.proxymod:bundledcc.name=Proxy for CC
+tile.proxymod:proxyccmfr.name=Proxy for MFR e CC
