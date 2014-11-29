@@ -45,6 +45,7 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
         CCProvider CCEntity = null;
         int xa,ya,za;
         int valor, sideop;
+        int conta;
 
         for(int lado=0;lado<6;lado++)
         {
@@ -63,8 +64,11 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
                     LogHelper.debug("Valor do lado:" + sideop + "=" + valor);
 
                     for(int i=0;i<16;i++){
-                        if((valor&redstone_bits[i])!=0)
+                        conta = valor&redstone_bits[i];
+                        if(conta!=0)
                             redstone_power[i]=15;
+                        else
+                            redstone_power[i]=0;
                     }
                 }
             }
@@ -118,7 +122,7 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
 
         for(int subnet=0;subnet<16;subnet++) {
             power[subnet] = redstone_power[subnet];
-            LogHelper.debug("subnet:" + power[subnet]);
+            LogHelper.debug("subnet:" + subnet + ",valor:" + power[subnet]);
         }
 
         return power;
@@ -132,7 +136,7 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
         if(subnet<0 || subnet>15)
             return 0;
 
-        LogHelper.debug("Block:getOutputValue:Subnet:" + redstone_power[subnet]);
+        LogHelper.debug("Block:getOutputValue:Subnet:" + subnet + ",Valor:" +redstone_power[subnet]);
         return redstone_power[subnet];
     }
 
@@ -151,7 +155,7 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
 
             for(int i=0;i<16;i++)
             {
-                LogHelper.debug("Subnet:" + inputValues[i]);
+                LogHelper.debug("Subnet:" + i + ",Valor:"+ inputValues[i]);
                 CCEntity.setRedstonepower(i,inputValues[i]);
             }
         }

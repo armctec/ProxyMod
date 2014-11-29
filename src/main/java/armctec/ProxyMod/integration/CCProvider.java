@@ -14,10 +14,12 @@ public class CCProvider extends BasicTileEntity implements IBundledRedstoneProvi
     {
         int out = 0, i = 0;
 
+        for(i=0;i<16;i++) {
+            LogHelper.debug("CC:getBundledRedstoneOutput - subnet:" + i +",value:"+redstonepower[i]);
 
-        for(i=0;i<16;i++)
             if (redstonepower[i] != 0)
                 out |= (1 << i);
+        }
 
         LogHelper.debug("CC:getBundledRedstoneOutput - " + out);
 
@@ -30,7 +32,7 @@ public class CCProvider extends BasicTileEntity implements IBundledRedstoneProvi
             return;
 
         if(value>15)
-            value=0;
+            value=15;
 
         if(value<0)
             value=0;
