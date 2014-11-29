@@ -72,7 +72,7 @@ public class BlockTileBasic extends BlockContainer
     {
         super.onBlockEventReceived(world, x, y, z, id, event);
 
-        LogHelper.debug("onBlockEventReceived");
+        //LogHelper.debug("onBlockEventReceived");
 
         TileEntity tileentity = world.getBlockTileEntity(x, y, z);
         return tileentity != null ? tileentity.receiveClientEvent(id, event) : false;

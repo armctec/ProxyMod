@@ -15,13 +15,13 @@ public class TileProviderCC extends BasicTileEntity implements IBundledRedstoneP
         int out = 0, i = 0;
 
         for(i=0;i<16;i++) {
-            LogHelper.debug("CC:getBundledRedstoneOutput - subnet:" + i +",value:"+redstonepower[i]);
+            //LogHelper.debug("CC:getBundledRedstoneOutput - subnet:" + i +",value:"+redstonepower[i]);
 
             if (redstonepower[i] != 0)
                 out |= (1 << i);
         }
 
-        LogHelper.debug("CC:getBundledRedstoneOutput - " + out);
+        //LogHelper.debug("CC:getBundledRedstoneOutput - " + out);
 
         return out;
     }
@@ -39,6 +39,6 @@ public class TileProviderCC extends BasicTileEntity implements IBundledRedstoneP
 
         redstonepower[subnet]=value;
 
-        LogHelper.debug("CC:setRedstonepower - subnet:" + subnet +",value:"+value);
+        //LogHelper.debug("CC:setRedstonepower - subnet:" + subnet +",value:"+value);
     }
 }

@@ -1,7 +1,6 @@
 package armctec.ProxyMod.integration;
 
 import armctec.ProxyMod.block.BlockTileBasic;
-import armctec.ProxyMod.compat.CCProvider;
 import armctec.ProxyMod.reference.Names;
 import armctec.ProxyMod.utility.LogHelper;
 import dan200.computercraft.api.ComputerCraftAPI;
@@ -36,7 +35,7 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
 
     @Override
     public TileEntity createNewTileEntity(World world) {
-        LogHelper.debug("createNewTileEntity");
+        //LogHelper.debug("createNewTileEntity");
         return new TileProviderCC();
     }
 
@@ -73,13 +72,13 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
             za = z + direction.offsetZ;
 
             if (world.blockHasTileEntity(xa, ya, za) == true) {
-                LogHelper.debug("Posicao x:" + xa + ",y:" + ya + ",z:" + za);
+                //LogHelper.debug("Posicao x:" + xa + ",y:" + ya + ",z:" + za);
 
                 directionop = direction.getOpposite();
                 sideop = directionop.ordinal();
                 valor = ComputerCraftAPI.getBundledRedstoneOutput(world, xa, ya, za, sideop);
                 if (valor != -1) {
-                    LogHelper.debug("Valor do lado:" + sideop + "=" + valor);
+                    //LogHelper.debug("Valor do lado:" + sideop + "=" + valor);
 
                     for(i=0;i<16;i++){
                         conta = valor&redstone_bits[i];
@@ -170,11 +169,11 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
     {
         int power[] = new int[16];
 
-        LogHelper.debug("Block:getOutputValues x:"+x+",y:"+y+",z:"+z+",side:"+side);
+        //LogHelper.debug("Block:getOutputValues x:"+x+",y:"+y+",z:"+z+",side:"+side);
 
         for(int subnet=0;subnet<16;subnet++) {
             power[subnet] = redstone_cc[subnet];
-            LogHelper.debug("subnet:" + subnet + ",valor:" + power[subnet]);
+            //LogHelper.debug("subnet:" + subnet + ",valor:" + power[subnet]);
         }
 
         return power;
@@ -183,23 +182,23 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
     @Override
     public int getOutputValue(World world, int x, int y, int z, ForgeDirection side, int subnet)
     {
-        LogHelper.debug("Block:getOutputValue x:"+x+",y:"+y+",z:"+z+",side:"+side+",subnet:"+subnet);
+        //LogHelper.debug("Block:getOutputValue x:"+x+",y:"+y+",z:"+z+",side:"+side+",subnet:"+subnet);
 
         if(subnet<0 || subnet>15)
             return 0;
 
-        LogHelper.debug("Block:getOutputValue:Subnet:" + subnet + ",Valor:" +redstone_cc[subnet]);
+        //LogHelper.debug("Block:getOutputValue:Subnet:" + subnet + ",Valor:" +redstone_cc[subnet]);
         return redstone_cc[subnet];
     }
 
     @Override
     public void onInputsChanged(World world, int x, int y, int z, ForgeDirection side, int[] inputValues)
     {
-        LogHelper.debug("Block:onInputsChanged x:"+x+",y:"+y+",z:"+z+",side:"+side);
+        //LogHelper.debug("Block:onInputsChanged x:"+x+",y:"+y+",z:"+z+",side:"+side);
 
         for(int i=0;i<16;i++)
         {
-            LogHelper.debug("Subnet:" + i + ",Valor:"+ inputValues[i]);
+            //LogHelper.debug("Subnet:" + i + ",Valor:"+ inputValues[i]);
             redstone_mfr[i] = inputValues[i];
         }
     }
@@ -207,7 +206,7 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
     @Override
     public void onInputChanged(World world, int x, int y, int z, ForgeDirection side, int inputValue)
     {
-        LogHelper.debug("Block:onInputChanged x:"+x+",y:"+y+",z:"+z+",side:"+side+",value:"+inputValue);
+        //LogHelper.debug("Block:onInputChanged x:"+x+",y:"+y+",z:"+z+",side:"+side+",value:"+inputValue);
     }
 
     @Override
