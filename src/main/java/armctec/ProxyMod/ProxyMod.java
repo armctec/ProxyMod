@@ -3,6 +3,7 @@ package armctec.ProxyMod;
 import armctec.ProxyMod.handler.ConfigurationHandler;
 import armctec.ProxyMod.init.ModBlocks;
 import armctec.ProxyMod.init.ModItems;
+import armctec.ProxyMod.init.ModTileEntities;
 import armctec.ProxyMod.init.Recipes;
 import armctec.ProxyMod.integration.BlockProxyCCMFR;
 import armctec.ProxyMod.proxy.ClientProxy;
@@ -41,10 +42,7 @@ public class ProxyMod
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        ClientProxy proxy = new ClientProxy();
-
-        Recipes.init();
-        proxy.registerTileEntities();
+        ModTileEntities.init();
         BlockProxyCCMFR.init();
         LogHelper.info("Initialization Complete!");
     }
@@ -52,6 +50,7 @@ public class ProxyMod
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
+        Recipes.init();
         LogHelper.info("Post Initialization Complete!");
     }
 }

@@ -15,6 +15,7 @@ public class ConfigurationHandler
 {
     public static Configuration configuration;
     public static int proxyccmfr_id  = 1500;
+    public static boolean vanillarecipe = false;
 
     public static void init(File configFile)
     {
@@ -30,6 +31,9 @@ public class ConfigurationHandler
         Property lido;
         lido = configuration.get("proxyccmfr_id", Configuration.CATEGORY_GENERAL, 1501, "ID para o bloco proxyccmfr");
         proxyccmfr_id = lido.getInt(1500);
+
+        lido = configuration.get("recipe", Configuration.CATEGORY_GENERAL, false, "Utilizar Vanilla recipe?");
+        vanillarecipe = lido.getBoolean(false);
 
         if (configuration.hasChanged())
         {
