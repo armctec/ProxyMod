@@ -30,7 +30,6 @@ public class Recipes
         if(cc_cable != null && cc_wiredModem != null && mfr_machineblock!=null && ConfigurationHandler.vanillarecipe==false) {
             LogHelper.debug("Recipe:Normal");
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.ProxyCCMFR, 1),
-                    //new Object[]{"iii", "nnn", "nnn", 'n', "cableRedNet",  'i', Item.ingotIron }));
                     new Object[]{"iii", "nmc", "rwr", 'n', "cableRedNet", 'm', mfr_machineblock, 'w', cc_wiredModem, 'c', cc_cable, 'r', Item.redstone, 'i', Item.ingotIron }));
         }
         else

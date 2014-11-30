@@ -6,7 +6,11 @@ import armctec.ProxyMod.utility.LogHelper;
 import dan200.computercraft.api.ComputerCraftAPI;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import powercrystals.minefactoryreloaded.api.rednet.IConnectableRedNet;
@@ -32,6 +36,8 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
         this.setBlockName(Names.Blocks.PROXYCCMFR);
         this.setBlockTextureName(Names.Blocks.PROXYCCMFR);
         this.setTickRandomly(true);
+        this.setHardness(5);
+        this.setResistance(10);
     }
 
     @Override
@@ -71,6 +77,9 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
             xa = x + direction.offsetX;
             ya = y + direction.offsetY;
             za = z + direction.offsetZ;
+
+            if(world.getBlockId(x,y,z)==this.blockID)
+                continue;
 
             if (world.blockHasTileEntity(xa, ya, za) == true) {
                 //LogHelper.debug("Posicao x:" + xa + ",y:" + ya + ",z:" + za);
@@ -136,7 +145,8 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
                     idblock==Block.torchRedstoneActive.blockID ||
                     idblock==Block.redstoneComparatorActive.blockID ||
                     idblock==Block.redstoneComparatorIdle.blockID ||
-                    idblock==Block.redstoneWire.blockID)
+                    idblock==Block.redstoneWire.blockID ||
+                    idblock==this.blockID)
                 continue;
 
             if(direction != ForgeDirection.UP)
@@ -213,5 +223,20 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
     @Override
     public boolean isBlockSolidOnSide(World world, int x, int y, int z, ForgeDirection side) {
         return true;
+    }
+
+    @Override
+    public boolean canDropFromExplosion(Explosion par1Explosion) {
+        return true;
+    }
+
+    @Override
+    public boolean canCreatureSpawn(EnumCreatureType type, World world, int x, int y, int z) {
+        return true;
+    }
+
+    @Override
+    public int idDropped(int par1, Random par2Random, int par3) {
+        return blockID;
     }
 }
