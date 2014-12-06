@@ -78,7 +78,7 @@ public class BlockProxyCCMFR  extends BlockTileBasic implements IConnectableRedN
             ya = y + direction.offsetY;
             za = z + direction.offsetZ;
 
-            if(world.getBlockId(x,y,z)==this.blockID)
+            if(world.getBlockId(xa,ya,za)==this.blockID)
                 continue;
 
             if (world.blockHasTileEntity(xa, ya, za) == true) {
